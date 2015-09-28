@@ -1,0 +1,33 @@
+
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+
+<% if user_signed_in? %>
+  <p>
+    <%= f.label :identificacion %><br>
+    <%= f.text_field :commenter , :value => current_user.email, readonly: true %>
+  </p>
+ 
+<%else%>
+    <p>
+    <%= f.label :identificacion %><br>
+    <%= f.text_field :commenter , :value => "Anonimo", readonly: true %>
+  </p>
+
+<%end%>
+ <p>
+    <%= f.label :comentario %> (1000 caracteres maximo)<br>
+    <%= f.text_area :body , :cols => 40, :rows => 5, :maxlength => 1000%>
+  </p>
+
+  <% if user_signed_in? and current_user != @post.user %>
+    <p>
+    <%= f.label :puntuacion %><br>
+    <%= f.number_field :point , :value => 0, :max => 5, :min => 0 %>
+  </p>
+  <% end%>
+  <p>
+    <%= f.submit "Comentar" %>
+  </p>
+<% end %>
+

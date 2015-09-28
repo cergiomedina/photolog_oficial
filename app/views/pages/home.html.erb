@@ -1,0 +1,19 @@
+<div class="jumbotron">
+	<h1>Bienvenido a PhotoloGG!</h1>
+	<br>
+
+	 <% if user_signed_in? %>
+	 <h2>Ya iniciaste sesion, sube tu foto ahora mismo!</h2>
+	 <%else%>
+	<h2>Registrate para subir tus propias publicaciones!</h2>
+	<%end%>
+	<br>
+	<h4>Donde tus momentos importan</h4>
+	<br>
+	<% if user_signed_in? %>
+	<%= link_to "Sube tu foto !", "posts/new", class: "btn btn-info login2" %>
+	<%else%>
+	<%= link_to "Ver lo que esta pasando en el mundo", posts_path, class: "btn btn-info login2" %>
+	<%end%>
+</div>
+

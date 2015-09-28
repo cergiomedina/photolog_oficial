@@ -1,0 +1,23 @@
+<p align="center">
+
+
+<%if @post.user.user_type ==1  and @post.user.email == comment.commenter%>
+	<font color="black" >GOLD </font> 
+	<img src="/assets/gold.png" width="20" height="20" alt="Edit Entry" /> 
+<%end%>
+
+
+  <strong><%= comment.commenter %></strong> :  <%= comment.body %> 
+<% if comment.commenter != "Anonimo" and @post.user.email != comment.commenter%>
+<strong>- Puntaje:  <%= comment.point %></strong>
+<%end%>
+   <% if user_signed_in? %>
+
+<% if current_user == @post.user  or current_user.email == comment.commenter%>
+   <%= link_to 'Eliminar comentario', [comment.post, comment],
+               method: :delete,
+               data: { confirm: 'Estas seguro?' } %>
+
+            <%end%>
+        <%end %>
+</p>

@@ -1,0 +1,87 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$mainbg: #ecf0f1;
+$navbg: #103087;
+$buttonbg: #e74c3c;
+
+body {
+	background: $mainbg;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+	width: 90vw;
+	height: auto;
+}
+
+.navbar-default {
+	background-color: $navbg;
+	border-style: none;
+}
+
+.navbar-brand, nav a {
+	color: #EEEEEE !important;
+} .navbar-brand:hover, nav a:hover {opacity: 0.85;}
+
+.jumbotron {
+	margin-top: 5em;
+	background-color: #fff;
+	text-align: center;
+}
+
+.login {
+	background-color: #3498db;
+	opacity: 0.80;
+	border-style: none;
+	margin: 0 .4em;
+} .login:hover {opacity: 0.5;}
+
+
+.login2 {
+	background-color: #103087;
+	border-style: none;
+	font-color: #000000;
+	padding: 1.25em;
+	font-size: 1.5em;
+	margin: 0 .4em;
+	
+} .login2:hover {background-color: #103087; opacity: 0.825;}
+
+.register {
+	background-color: #9b59b6;
+	opacity: 0.80;
+	border-style: none;
+} .register:hover {opacity: 0.5; background-color: #9b59b6;}
+
+.posts-table tr > td {
+	padding-right: 1em;
+}
+
+.new-post a {
+	font-size: 200%;
+	font-weight: bold;
+	color: #16a085;
+}
+
+.well > img {
+	max-width: 70%;
+}
+
+.box {
+	margin: 1.75em;
+	padding: 0.33em;
+	font-size: 0.925em;
+	line-height: 1.4em;
+	float: left;
+	border-radius: 5px;
+	box-shadow: 1px 1px 10px #444;
+	width: 20em;
+}
+
+.box img {
+	display: block;
+	width: 100%;
+	border-radius: 5px;
+}

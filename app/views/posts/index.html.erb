@@ -1,0 +1,30 @@
+<head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+</head>
+
+<center class="new-post">
+  <%= link_to 'Nueva publicacion', new_post_path %>
+</center> <!--.new-post-->
+
+<br><br><br><br>
+
+<div id="posts">
+
+  <% @posts.each do |post| %>
+    <div class="box">
+        <%= link_to (image_tag post.image), post %>
+        <p><strong>Titulo: </strong><%= post.title %></p>
+        <p><strong>Descripcion: </strong><%= post.description %></p>
+        <p><strong>Correo: </strong><%= post.user.email %></p>
+        <p>
+          <%= link_to 'Ver', post %>
+          <% if current_user == post.user %> <!-- CONDITIONAL FOR IF LOGGED IN USER = USER WHO POSTED THE CONTENT -->
+            <%= link_to 'Editar', edit_post_path(post) %>
+            <%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estas seguro?' } %>
+          <% end %>
+        </p>
+
+    </div> <!--.box-->   
+  <% end %>
+
+</div> <!--.posts-->
